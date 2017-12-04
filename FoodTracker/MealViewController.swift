@@ -14,6 +14,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var caloriesTextField: UITextField!
+    @IBOutlet weak var mealDescriptionTextField: UITextField!
+    
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -115,7 +118,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let rating = ratingControl.rating
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating)
+//        meal = Meal(name: name, photo: photo, rating: rating)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

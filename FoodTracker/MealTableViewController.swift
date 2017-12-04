@@ -21,36 +21,21 @@ class MealTableViewController: UITableViewController {
         let photo1 = UIImage(named: "meal1")
         let photo2 = UIImage(named: "meal2")
         let photo3 = UIImage(named: "meal3")
+
         
-        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4) else {
-            fatalError("Unable to instantiate meal1")
-        }
+        guard let meal1 = Meal(name: "Caprese Salid", photo: photo1, rating: 4, calories: 100, mealDescription: "Tasty salad")else {
+            //            fatalError("Unable to instantiate meal1")
+            //        }
         
-        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
+            guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5, calories: 2000, mealDescription: "high in carbs, but tasty") else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
+            guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3, calories: 2000, mealDescription: "High in carbs, but super super tasty") else {
             fatalError("Unable to instantiate meal2")
         }
-        
         meals += [meal1, meal2, meal3]
     }
-    
-    private func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save meals...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadMeals() -> [Meal]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

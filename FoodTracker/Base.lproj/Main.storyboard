@@ -78,8 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-pH-J0m">
-                                <rect key="frame" x="16" y="84" width="343" height="433"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-pH-J0m">
+                                <rect key="frame" x="16" y="84" width="343" height="515"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-XB-vnp">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -87,8 +87,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter calories..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-c3-Rc7">
+                                        <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meal Description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kI8-Im-H4O">
+                                        <rect key="frame" x="0.0" y="76" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="QKv-H5-CG3">
-                                        <rect key="frame" x="0.0" y="38" width="343" height="343"/>
+                                        <rect key="frame" x="0.0" y="114" width="343" height="343"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QKv-H5-CG3" secondAttribute="height" multiplier="1:1" id="Xi6-nC-EtH"/>
@@ -97,13 +109,17 @@
                                             <outletCollection property="gestureRecognizers" destination="WSi-U4-n7e" appends="YES" id="HPm-Id-Nwe"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-Iv-kvV" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="389" width="252" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-Iv-kvV" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="45.5" y="465" width="252" height="50"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="r7W-XB-vnp" secondAttribute="trailing" id="6UE-wU-O3f"/>
                                     <constraint firstAttribute="trailing" secondItem="QKv-H5-CG3" secondAttribute="trailing" id="9fL-BZ-ccT"/>
+                                    <constraint firstAttribute="trailing" secondItem="DSq-c3-Rc7" secondAttribute="trailing" id="GlS-ok-7ON"/>
+                                    <constraint firstItem="DSq-c3-Rc7" firstAttribute="leading" secondItem="yfY-pH-J0m" secondAttribute="leading" id="WHA-hG-GhN"/>
+                                    <constraint firstItem="kI8-Im-H4O" firstAttribute="leading" secondItem="yfY-pH-J0m" secondAttribute="leading" id="ct7-Rb-dDu"/>
+                                    <constraint firstAttribute="trailing" secondItem="kI8-Im-H4O" secondAttribute="trailing" id="z7E-4K-5SY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -128,6 +144,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="caloriesTextField" destination="DSq-c3-Rc7" id="4dI-r4-EMv"/>
+                        <outlet property="mealDescriptionTextField" destination="kI8-Im-H4O" id="1hw-AK-eRW"/>
                         <outlet property="nameTextField" destination="r7W-XB-vnp" id="oKK-SO-igy"/>
                         <outlet property="photoImageView" destination="QKv-H5-CG3" id="sxq-il-ser"/>
                         <outlet property="ratingControl" destination="LbB-Iv-kvV" id="6m4-iJ-lCo"/>
@@ -143,6 +161,56 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2002.4000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="ujj-NW-AML">
+            <objects>
+                <viewController id="f1E-1X-eVv" customClass="SignUpViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oE5-QD-F8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6C-fI-MeK">
+                                <rect key="frame" x="16" y="52" width="343" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vks-T4-Yyq">
+                                <rect key="frame" x="102" y="125" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5a1-Uz-S64">
+                                <rect key="frame" x="114" y="177" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBu-lY-1s8">
+                                <rect key="frame" x="160" y="252" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="f1E-1X-eVv" eventType="touchUpInside" id="vpc-Sp-zBJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="zfM-Pe-PSV"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="5a1-Uz-S64" id="6B9-36-adM"/>
+                        <outlet property="usernameTextField" destination="vks-T4-Yyq" id="8Ug-la-wzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZj-PG-pKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855.1999999999998" y="270.31484257871068"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FTW-av-mMf">
