@@ -23,9 +23,8 @@ class MealTableViewController: UITableViewController {
         let photo3 = UIImage(named: "meal3")
 
         
-        guard let meal1 = Meal(name: "Caprese Salid", photo: photo1, rating: 4, calories: 100, mealDescription: "Tasty salad")else {
-            //            fatalError("Unable to instantiate meal1")
-            //        }
+        guard let meal1 = Meal(name: "Caprese Salid", photo: photo1, rating: 4, calories: 100, mealDescription: "Tasty salad")else { fatalError("Unable to instantiate meal1")
+                    }
         
             guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5, calories: 2000, mealDescription: "high in carbs, but tasty") else {
             fatalError("Unable to instantiate meal2")
@@ -49,20 +48,34 @@ class MealTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         // Load the sample data.
-        if let savedMeals = loadMeals() {
-            meals += savedMeals
-        }
-        else {
+
             // Load the sample data.
-            loadSampleMeals()
+        loadSampleMeals()
+        checkForUserAccount()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+    }
+
+    func checkForUserAccount(){
+        let userDefault = UserDefaults.standard
+//        userDefault.set("Javx", forKey: "username")
+//        userDefault.set("javx123", forKey: "password")
+//        print(userDefault.object(forKey: "username")!)
+//        print(userDefault.object(forKey: "password")!)
+        
+        if userDefault.object(forKey: "username") != nil {
+//            Trigger the segue for the login view controller
         }
+        else{
+//            Present the segue for the signup viewcontroller
+        }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -106,7 +119,7 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             meals.remove(at: indexPath.row)
-            saveMeals()
+
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -156,6 +169,20 @@ class MealTableViewController: UITableViewController {
             let selectedMeal = meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
             
+        case "signup":
+            guard let signUpViewController = segue.destination as? AuthenticationViewController else{
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            signUpViewController.titleLabel.text = "Sign Up"
+            
+        case "login":
+            guard let loginViewController = segue.destination as? AuthenticationViewController else{
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+                loginViewController.titleLabel.text = "Login"
+            
+            
+            
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
@@ -180,7 +207,6 @@ class MealTableViewController: UITableViewController {
             meals.append(meal)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            saveMeals()
         }
         
         

@@ -65,6 +65,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="f1E-1X-eVv" kind="presentation" identifier="signup" id="e5Y-35-VMI"/>
+                        <segue destination="f1E-1X-eVv" kind="presentation" identifier="login" id="sTk-R7-teW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGo-ct-osQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,8 +82,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-pH-J0m">
-                                <rect key="frame" x="16" y="84" width="343" height="515"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-pH-J0m">
+                                <rect key="frame" x="16" y="84" width="343" height="509"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-XB-vnp">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -109,8 +113,8 @@
                                             <outletCollection property="gestureRecognizers" destination="WSi-U4-n7e" appends="YES" id="HPm-Id-Nwe"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-Iv-kvV" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="465" width="252" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-Iv-kvV" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="45.5" y="465" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -205,12 +209,13 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="5a1-Uz-S64" id="6B9-36-adM"/>
+                        <outlet property="titleLabel" destination="K6C-fI-MeK" id="o9j-KI-eAT"/>
                         <outlet property="usernameTextField" destination="vks-T4-Yyq" id="8Ug-la-wzg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZj-PG-pKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.1999999999998" y="270.31484257871068"/>
+            <point key="canvasLocation" x="1060" y="-540"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FTW-av-mMf">
@@ -253,6 +258,7 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sTk-R7-teW"/>
         <segue reference="fah-qv-sVf"/>
     </inferredMetricsTieBreakers>
 </document>

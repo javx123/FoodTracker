@@ -13,7 +13,8 @@
 		2D27D0481FD541A90056C6CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D27D0471FD541A90056C6CB /* Assets.xcassets */; };
 		2D27D04B1FD541A90056C6CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D27D0491FD541A90056C6CB /* LaunchScreen.storyboard */; };
 		2D27D0561FD541A90056C6CB /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27D0551FD541A90056C6CB /* FoodTrackerTests.swift */; };
-		2D6230C41FD6018600652FC5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6230C31FD6018600652FC5 /* SignUpViewController.swift */; };
+		2D6230C41FD6018600652FC5 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6230C31FD6018600652FC5 /* AuthenticationViewController.swift */; };
+		2D6230C61FD60F0D00652FC5 /* CloudTrackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6230C51FD60F0D00652FC5 /* CloudTrackAPI.swift */; };
 		2D79AC8B1FD54F4100BFBF7F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D79AC8A1FD54F4100BFBF7F /* RatingControl.swift */; };
 		2D79AC8D1FD559D700BFBF7F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D79AC8C1FD559D700BFBF7F /* Meal.swift */; };
 		2D79ACB01FD5B50F00BFBF7F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D79ACAF1FD5B50F00BFBF7F /* MealTableViewCell.swift */; };
@@ -41,7 +42,8 @@
 		2D27D0511FD541A90056C6CB /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D27D0551FD541A90056C6CB /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		2D27D0571FD541A90056C6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D6230C31FD6018600652FC5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2D6230C31FD6018600652FC5 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		2D6230C51FD60F0D00652FC5 /* CloudTrackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTrackAPI.swift; sourceTree = "<group>"; };
 		2D79AC8A1FD54F4100BFBF7F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		2D79AC8C1FD559D700BFBF7F /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2D79ACAF1FD5B50F00BFBF7F /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,12 +91,13 @@
 			children = (
 				2D27D0401FD541A90056C6CB /* AppDelegate.swift */,
 				2D27D0421FD541A90056C6CB /* MealViewController.swift */,
-				2D6230C31FD6018600652FC5 /* SignUpViewController.swift */,
-				2D79AC8A1FD54F4100BFBF7F /* RatingControl.swift */,
-				2D79AC8C1FD559D700BFBF7F /* Meal.swift */,
+				2D6230C31FD6018600652FC5 /* AuthenticationViewController.swift */,
+				2DBACA421FD5BADB0043291C /* MealTableViewController.swift */,
 				2D27D0441FD541A90056C6CB /* Main.storyboard */,
 				2D79ACAF1FD5B50F00BFBF7F /* MealTableViewCell.swift */,
-				2DBACA421FD5BADB0043291C /* MealTableViewController.swift */,
+				2D6230C51FD60F0D00652FC5 /* CloudTrackAPI.swift */,
+				2D79AC8A1FD54F4100BFBF7F /* RatingControl.swift */,
+				2D79AC8C1FD559D700BFBF7F /* Meal.swift */,
 				2D27D0471FD541A90056C6CB /* Assets.xcassets */,
 				2D27D0491FD541A90056C6CB /* LaunchScreen.storyboard */,
 				2D27D04C1FD541A90056C6CB /* Info.plist */,
@@ -215,9 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D79AC8D1FD559D700BFBF7F /* Meal.swift in Sources */,
-				2D6230C41FD6018600652FC5 /* SignUpViewController.swift in Sources */,
+				2D6230C41FD6018600652FC5 /* AuthenticationViewController.swift in Sources */,
 				2D27D0431FD541A90056C6CB /* MealViewController.swift in Sources */,
 				2D79AC8B1FD54F4100BFBF7F /* RatingControl.swift in Sources */,
+				2D6230C61FD60F0D00652FC5 /* CloudTrackAPI.swift in Sources */,
 				2D27D0411FD541A90056C6CB /* AppDelegate.swift in Sources */,
 				2DBACA431FD5BADB0043291C /* MealTableViewController.swift in Sources */,
 				2D79ACB01FD5B50F00BFBF7F /* MealTableViewCell.swift in Sources */,
