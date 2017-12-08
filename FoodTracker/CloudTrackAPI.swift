@@ -31,8 +31,8 @@ class CloudTrackAPI {
                 print("URL Session Task Succeeded: HTTP \(statusCode)")
             }
             else {
-                // Failure
-                print("URL Session Task Failed: %@", error!.localizedDescription);
+                
+                
             }
             
             var json: Any?
@@ -40,7 +40,7 @@ class CloudTrackAPI {
                 json = try JSONSerialization.jsonObject(with: data!)
             }
             catch {
-                print(#line, error.localizedDescription)
+               
             }
             
             guard let userInfo = json as? [String : Any] else { return }

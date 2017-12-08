@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="2002.4000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Authentication View Controller-->
         <scene sceneID="ujj-NW-AML">
             <objects>
-                <viewController id="f1E-1X-eVv" customClass="SignUpViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f1E-1X-eVv" customClass="AuthenticationViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE5-QD-F8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +208,7 @@
                         <viewLayoutGuide key="safeArea" id="zfM-Pe-PSV"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="hBu-lY-1s8" id="iKk-GO-P43"/>
                         <outlet property="passwordTextField" destination="5a1-Uz-S64" id="6B9-36-adM"/>
                         <outlet property="titleLabel" destination="K6C-fI-MeK" id="o9j-KI-eAT"/>
                         <outlet property="usernameTextField" destination="vks-T4-Yyq" id="8Ug-la-wzg"/>
@@ -258,7 +259,7 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sTk-R7-teW"/>
+        <segue reference="e5Y-35-VMI"/>
         <segue reference="fah-qv-sVf"/>
     </inferredMetricsTieBreakers>
 </document>

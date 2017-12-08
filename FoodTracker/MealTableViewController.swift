@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class MealTableViewController: UITableViewController {
+class MealTableViewController: UITableViewController, FoodTrackerProtocol {
 
     //MARK: Properties
     
@@ -50,13 +50,13 @@ class MealTableViewController: UITableViewController {
         // Load the sample data.
 
             // Load the sample data.
-        loadSampleMeals()
         checkForUserAccount()
+//        loadSampleMeals()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+        loadSampleMeals()
     }
 
     func checkForUserAccount(){
@@ -68,9 +68,12 @@ class MealTableViewController: UITableViewController {
         
         if userDefault.object(forKey: "username") != nil {
 //            Trigger the segue for the login view controller
+            performSegue(withIdentifier: "login", sender: nil)
+            
         }
         else{
 //            Present the segue for the signup viewcontroller
+            performSegue(withIdentifier: "signup", sender: nil)
         }
         
     }
@@ -173,22 +176,25 @@ class MealTableViewController: UITableViewController {
             guard let signUpViewController = segue.destination as? AuthenticationViewController else{
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            signUpViewController.titleLabel.text = "Sign Up"
+            signUpViewController.authentication = .signup
+            signUpViewController.delegate = self
             
         case "login":
             guard let loginViewController = segue.destination as? AuthenticationViewController else{
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-                loginViewController.titleLabel.text = "Login"
-            
-            
+            loginViewController.authentication = .login
+            loginViewController.delegate = self
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
  
-    
+    func populateTableView() {
+        tableView.reloadData()
+        print("It's connected!")
+    }
     
     
     //MARK: Actions
